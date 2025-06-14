@@ -12,7 +12,6 @@ author:
     affiliation: Universidade de Pernambuco
 format: 
   html:
-    embed-resources: true
     css: style.css
     number-sections: true
     
