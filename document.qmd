@@ -20,6 +20,7 @@ jupyter: python3
 lang: pt
 bibliography: references.bib
 date: 16/06/2025
+date-format: DD/MM/YYYY
 toc: true
 ---
 
