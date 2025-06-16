@@ -1,6 +1,6 @@
 ---
 title: "Combinações para Previsão de Séries Temporais"
-subtitle: "Alguns Argumentos de Por que Combinações em Tarefas de Previsão de Séries Temporais Funcionam e Exemplos de Aplicações Operadores de Combinação"
+subtitle: "Alguns Argumentos de Por que Combinações em Tarefas de Previsão de Séries Temporais Funcionam e Exemplos de Aplicações que usam Operadores de Combinação"
 
 
 title-block-banner: true
@@ -26,18 +26,18 @@ toc: true
 
 # Qual é a Importância das Combinações?
 
-Tarefas de aprendizagem de máquina são difíceis de realizar; é necessário: objetivo bem definido, estudo e tempo. O objetivo deve ser bem estipulado para que saibamos o que queremos fazer. Há casos, obviamente, que se inicia trabalhos sem horizontes, analisando uma massa de dados e buscando alguma informação relevante, no entanto a melhor maneira de agir é previamente saber o que se deseja e para onde deve se ir para atingir o plano. O estudo é meio pelo qual estrutura-se a execução o desejado, sem estudarmos o campo e as ferramentas a serem usadas, as tarefas de aprendizados são inviáveis; como realizar aquela classificação de doença X que meu chefe pediu? Como dar-se-á? E, finalmente, o tempo --- nem sempre temos o suficiente, a análise dos dados é para ontem, ou o modelo que entrará em produção está atrasado. Com tais dificuldades eis que surge a pergunta: por que combinar? É uma pergunta legítima. Unir modelos aumenta a complexidade geral do sistema, precisamos de mais estudo para entender quais modelos são adequados, qual é a melhor forma de combinação (o operador), se temos tempo para treinar mais um modelos etc.
+Tarefas de aprendizagem de máquina são difíceis de realizar; são necessários: objetivo bem definido, estudo e tempo. O objetivo deve ser bem estipulado para que saibamos o que queremos fazer. Há casos, obviamente, que se iniciam trabalhos sem horizontes, analisando uma massa de dados e buscando nela alguma informação relevante, no entanto a melhor maneira de agir é previamente saber o que se deseja e aonde se deve ir para atingir o plano. O estudo é o meio pelo qual estrutura-se a execução o desejado, sem estudarmos o campo e as ferramentas a serem usadas, as tarefas de aprendizados são inviáveis; como realizar aquela classificação de doença X que meu chefe pediu? Como dar-se-á? E, finalmente, o tempo --- nem sempre temos o suficiente ---; a análise dos dados é para ontem, ou o modelo que entrará em produção está atrasado. Com tais dificuldades eis que surge a pergunta: por que combinar? É uma pergunta legítima. Unir modelos aumenta a complexidade geral do sistema, precisamos de mais estudo para entender quais modelos são adequados, qual é a melhor forma de combinação (o operador), se temos tempo para treinar mais um modelos etc.
 
-A resposta para a pergunta feita é: aumentar a acurácia. Não há mais o que dizer. Sistemas mais precisos são melhores, simples assim. Se dispomos de modelos que prevejam com mais precisão, as perdas por causa de seus erros é reduzida, e isso traduz-se como dinheiro economizado ou mesmo vidas salvas.
+A resposta para a pergunta feita é: aumentar a acurácia. Não há mais o que dizer. Sistemas que generalizam bem são melhores, simples assim. Se dispomos de modelos que prevejam com mais precisão, as perdas por causa de seus erros são reduzidas, e isso traduz-se em dinheiro economizado ou mesmo vidas salvas.
 
 
 # Por que Combinações Funcionam?
 
-É consenso entre pesquisadores que combinações superam modelos individuais em termos de acurácia. Mas quais são os motivos por que combinações funcionam, *i.e*. aumentam a acurácia? @zhou2025 destaca três razões que explicam o motivo de que combinar dá certo: "estatísticas", "computationais" e "representationais".
+É consenso entre pesquisadores que combinações superam modelos individuais em termos de acurácia. Mas quais são os motivos por que essas funcionam, *i.e*. aumentam a acurácia? @zhou2025 destaca três razões que explicam o motivo de que combinar dá certo: "estatísticas", "computationais" e "representationais".
 
-A primeira, razão estatística, é que um risco em selecionar o melhor modelo dentre vários candidatos treinados num mesmo conjunto de treino; mesmo que esses tenham o mesmo erro no conjunto de treino, é possível que na hora de generalizar não tenham o mesmo desempenho. Então, em vez de ariscar-se em selecionar o melhor, é mais razoável combiná-los para diminuir, assim, probabilidade de escolha de modelos inacurádos.
+A primeira, a razão estatística, é que um risco em selecionar o modelo mais adequado dentre vários candidatos treinados num mesmo conjunto de treino; mesmo que esses tenham o mesmo erro no conjunto de treino, é possível que na hora de generalizar não tenham desempenho aproximado. Então, em vez de ariscar-se em selecionar o melhor, é mais razoável combiná-los para diminuir, assim, probabilidade de escolha de métodos inacurádos.
 
-Quanto à computacional, uma parte dos modelos faz busca local e, consequantemente, pode ficar preso em mínimos locais. Se treinarmos (várias buscas locais) muitos métodos em pontos de inícios diferentes e combiná-los, é possível aproximar ao modelo ideal para o conjunto de dados reduzindo a probabilidade de ajuste em mínimos locais.
+Quanto à computacional, uma parte dos modelos faz busca local no seu treino e, consequantemente, pode ficar presa em mínimos locais. Caso treinarmos muitos métodos em pontos de inícios diferentes (várias buscas locais) e combiná-los, é possível aproximar ao modelo ideal para o conjunto de dados, reduzindo a probabilidade de ajuste em mínimos locais.
 
 Por último a questão representacional. Em várias tarefas de aprendizado de máquina, é impossível achar o modelo desconhecido que represente os dados. No entanto, com combinações, é possível aproximar-se desse método ideal.
 
@@ -49,37 +49,39 @@ Semelhante a qualquer tarefa de aprendizado, previsão de séries temporais tamb
 *"The results have been virtually unanimous: combining multiple forecasts leads to increased forecast accuracy".* @clemen1989
 :::
 
-Além de aumentar a acurácia da previsão, combinar métodos pode também diminuir a variância da predição, foi o que encontrou o trabalho de @makridakis1983averages, que empregou a média simples para tarefa de previsão. Diminuir a variância torna o modelo mais robusto.
+Além de aumentar a acurácia da previsão, agregar métodos pode incluisive diminuir a variância da predição, foi o que encontrou o trabalho de @makridakis1983averages, que empregou a média simples para tarefa de previsão. Diminuir a variância torna o sistema mais robusto.
 
-O primeiro artigo a adotar combinações foi o seminal @BatesGranger1969 no qual os autores apresentaram cinco formas de estimar pesos para média ponderada para dois modelos: ARIMA e Exponential Smoothing. Já neste trabalho fora identificado que o uso de combinações pode superar os modelos individuais. Os autores destacam dois pontos relevantes para juntar métodos:
+O primeiro artigo a adotar combinações foi o seminal @BatesGranger1969 no qual os autores apresentaram cinco formas de estimar pesos à média ponderada para dois modelos: ARIMA e Exponential Smoothing. Já neste trabalho fora identificado que o uso de combinações pode superar modelos individuais. 
+
+Os autores destacam dois pontos relevantes para juntar métodos:
 
 1. Uma previsão é baseada em informações ou variáveis que a outra não considera.
 2. Os modelos podem fazem suposições diferentes da relação entre variáveis.
 
-É caso dois modelos destacados: enquanto ARIMA modela os dados considerando a autocorrelação das observações e erros o Exponential Smoothing faz uma modelagem ponderada em relação às características da séries (tendência, sazonalidade e resto). Ou seja, dois métodos que extraem informações dessemelhantes.
+É caso dois modelos destacados: enquanto ARIMA modela os dados considerando a autocorrelação das observações e erros, o Exponential Smoothing faz uma modelagem ponderada em relação às características da séries (tendência, sazonalidade e resto). Ou seja, dois métodos que extraem informações dessemelhantes.
 
-O manual clássico de *Forecasting: methods and applications* @1998forecasting ilustra mais alguns motivos por que modelos individuais podem deteriorar:
+O manual clássico *Forecasting: methods and applications* de @1998forecasting ilustra mais alguns motivos por que modelos individuais podem deteriorar:
 
-1. Mensurar a coisa errada: a situações que temos de prever alguma coisa, porém onde estão seus dados? Em casos assim podemos usar variáveis *proxies*, todavia o uso dessas introdus viéses no modelo, o que pode reduzir-lhe a acurácia;
-2. Padrões ou relacioções instáveis ​​ou em mudança: métodos estatísticos (e de aprendizagem de máquina também) assumem que os padrões nos dados são constantes (como média e variância). Todavia, é impossível garantir isso em dados reais, quanto mais o tempo passa, mas as mudanças acontecem como cíclos econômicos, mudanças em gostos, eventos políticos. Isso tudo afeta os resultados.
-3. Modelos que minimizam os erros passados: alguns modelos atuam minimizando os erros as previsões de um passo à frente (do inglês *one-step-ahead forecasting*). Geralmente precisamos de previsões de muitos passos à frente, o que pode ser um problema, porque muitos para muitos passos ao futuro o modo como estes modelos minimizam os erros não seja adequado.
+1. Mensurar a coisa errada: há situações que devemos prever alguma coisa, porém onde estão seus dados? Em casos assim podemos usar variáveis *proxies*, todavia o uso dessas introduz viéses no modelo, o que pode reduzir-lhe a acurácia;
+2. Padrões ou relações instáveis ​​ou em mudança: métodos estatísticos (e de aprendizagem de máquina também) assumem que os padrões nos dados são constantes (como média e variância). É impossível, todavia, garantir isso em dados reais, quanto mais o tempo passa, mais as mudanças acontecem como cíclos econômicos, vairações em gostos, eventos políticos. Isso tudo afeta os resultados.
+3. Modelos que minimizam os erros passados: alguns modelos atuam minimizando os erros as previsões de um passo à frente (do inglês *one-step-ahead forecasting*). Geralmente precisamos de previsões de muitos passos à frente (do inglês *multistep-ahead forecasting*), o que pode ser um problema, visto que para muitos passos ao futuro o modo como estes modelos minimizam os erros talvez não seja adequado.
 
-Os autores argumentam que combinações minimizam esses problemas pois combinações coloca na média os erros que as questões são capazes criar.
+Os autores argumentam que combinações minimizam esses problemas, pois essas colocam na média os erros que as questões são capazes criar.
 
 # Exemplos de Combinações
 
 Após algums dados para corroborar o fato de que modelos quando unidos são mais precisos, agora são listadas algumas formas de combinações:
 
-1. **Média simples** ou média aritmética: Provalmente a forma mais popular de combinar modelos. @makridakis1983averages apregaram essa forma de combinação e conseguiram resultados muitos bons. @FPP3 afirmam que é muito difícil de bate-la, sendo, então, além de popular e simples de implementar, muito precisa.
-2. **Mediana**: Também bastante popular e um poucos mais robusta que a média. @makridakis2023statistical usando o operador mediana conseguiram resultados importantes combinando 200 modelos de deep-learning (MLP, Transformer, Wave-Net e DeepAR).
-3. **Média Ponderada**: A média simples é um caso especial da forma ponderada. Essa estima quais métodos são mais relevantes para o sistema, ou seja, mais acurados e lhes atribui pesos que destacam sua importância. Há inuméras formas que estimar os pesos. Além do trabalho pioneiro de @BatesGranger1969, médias ponderadas podem conseguir feitos primorosos quando seu método de estimação de pesos é adequado, em @granger1984 que criou três formas de estimar pesos usando coeficientes de regressão linear. Ou em @kolassa2011 que atribuiu importância aos modelos baseado no Critério de Informação de Akaike (AIC).
-4. **Moda**: Sim, é possível estimar a moda para problemas de regressão, menos usadas que as anteriores para pode conseguir resultados interessantes. O trablho de @kourentzes2014mode empregou o operador moda para combinar modelos de MLP e conseguiram resultados muito bons, já que moda não é sensível a *outliers*. Os autores estimaram a moda de valores de ponto flutuante usando estimador de densidade kernel ou KDE (do inglês *kernel density estimation*).
-5. **Stacking**: Muito conhecido em problemas de classificação, mas pode ser empregado para previsão de séries históricas. Nem sempre se destaca como aqueles com melhores retorno, porém há caso em que conseguiu performances boas. Um exemplo destacado de uso de stacking (empilhamento) foi em @pavlyshenko2019 que usando um sistema de empilhamento venceu a competição @grupo-bimbo-inventory-demand de previsão de inventário do Grupo Bimbo de panificação.
+1. **Média simples** ou média aritmética: Provalmente a forma mais popular de combinar modelos. @makridakis1983averages apregaram essa forma de combinação e conseguiram resultados muitos bons. @FPP3 afirmam que é muito difícil de bate-la, sendo, então, além de popular e simples de implementar, é muito precisa.
+2. **Mediana**: Igualmente bastante popular e um pouco mais robusta que a média. @makridakis2023statistical usando o operador mediana conseguiram resultados importantes combinando 200 modelos de deep-learning (MLP, Transformer, Wave-Net e DeepAR).
+3. **Média Ponderada**: A média simples é um caso especial da forma ponderada. Essa estima quais métodos são mais relevantes para o sistema, ou seja, mais acurados e lhes atribui pesos que destacam sua importância. Há inuméras formas que estimar os pesos. Além do trabalho pioneiro de @BatesGranger1969, médias ponderadas podem conseguir feitos primorosos quando seu método de estimação de pesos é adequado, @granger1984 desenvolveu três formas de estimar pesos usando coeficientes de regressão linear. Em @kolassa2011 o modo atribuir importância aos modelos é baseado no Critério de Informação de Akaike (AIC).
+4. **Moda**: Sim, é factível estimar a moda para problemas de regressão, essa é menos aplicada que os operadores anteriores para pode conseguir resultados interessantes. O trabalho de @kourentzes2014mode empregou o operador moda para combinar modelos de MLP e alcançou resultados interessantes, já que moda não é sensível a *outliers*. Os autores estimaram a moda de valores de ponto flutuante usando estimador de densidade kernel ou KDE (do inglês *kernel density estimation*).
+5. **Stacking**: Muito conhecido em problemas de classificação, pode ser empregado para previsão de séries históricas. Nem sempre se destaca como aqueles com melhores retornos, porém há caso em que conseguiu performances destacáveis. Um exemplo importante de uso de stacking (empilhamento) foi em @pavlyshenko2019 que operando um sistema de empilhamento venceu a competição @grupo-bimbo-inventory-demand de previsão de inventário do Grupo Bimbo de panificação.
 
 # Conclusão
 
-Previsão de séries temporais é um tema fascinante e com muita aplicabilidade. Para que essa seja bem sucedida é preciso que o método escolhido tenha poder preditivo e ao contrário da forma tradicional --- que é selecionando o melhor modelo --- a forma mais eficaz de fazê-lo é por meio de combinações. Foi mostrado uma séries de bons motivos de empregar união de métodos como aumento de acurácia e diminuição de variância.
+Previsão de séries temporais é um tema fascinante e com muita aplicabilidade. Para que essa seja bem sucedida é preciso que o método escolhido tenha poder preditivo e ao contrário da forma tradicional --- que é selecionando o melhor modelo --- a forma mais eficaz de fazê-lo é por meio de combinações. Foi mostrado uma séries de bons motivos em empregar combinações de métodos como aumento de acurácia e diminuição de variância.
 
-Além dos motivos, foram descritos alguns operadores populares junto a exemplos que os empregaram de forma proveitosa. Existem inúmeras aplicações desses operadores, umas mais outras menos sofisticadas.
+Além dos motivos, foram descritos alguns operadores populares junto a exemplos que os empregaram de forma proveitosa. Existem inúmeras aplicações desses operadores, umas mais sofisticada, outras menos.
 
-Vale a pena combinar, mesmo aumentando a complexidade do sistem e tendo de estudar um pouco mais para que essa funcione, os benefícios são maiores que tais ônus, quanto mais precisa for a informação futura, melhor será a tomada de decisão, o tempo a mais treinando modelos adicionais pode converter-se em ganhos.
+Vale a pena combinar, mesmo aumentando a complexidade do sistem e tendo de estudar um pouco mais para que essa funcione, os benefícios são maiores que os ônus, quanto mais precisa for a informação futura, melhor será a tomada de decisão, o tempo a mais treinando modelos adicionais pode converter-se em ganhos.
