@@ -77,8 +77,8 @@ Após algums dados para corroborar o fato de que modelos quando unidos são mais
 
 # Conclusão
 
-Previsão de séries temporais é um tema fascinante e com muita aplicabilidade. Para que essa seja bem sucedida é preciso que o método escolhido tenha poder preditido e ao contrário da forma tradicional, que é selecionando o melhor modelo, uma forma eficaz de fazê-lo é por meio de combinações. Foi mostrado uma séries de bons motivos de empregar união de métodos como aumento de acurácia e diminuição de variância.
+Previsão de séries temporais é um tema fascinante e com muita aplicabilidade. Para que essa seja bem sucedida é preciso que o método escolhido tenha poder preditivo e ao contrário da forma tradicional --- que é selecionando o melhor modelo --- a forma mais eficaz de fazê-lo é por meio de combinações. Foi mostrado uma séries de bons motivos de empregar união de métodos como aumento de acurácia e diminuição de variância.
 
-Além de falar dos motivos, foi mostrado alguns operadores populares junto a exemplos que os empregaram de forma proveitosa. Existem inúmeras aplicações desses operadores, mais ou menos sofisticadas.
+Além dos motivos, foram descritos alguns operadores populares junto a exemplos que os empregaram de forma proveitosa. Existem inúmeras aplicações desses operadores, umas mais outras menos sofisticadas.
 
 Vale a pena combinar, mesmo aumentando a complexidade do sistem e tendo de estudar um pouco mais para que essa funcione, os benefícios são maiores que tais ônus, quanto mais precisa for a informação futura, melhor será a tomada de decisão, o tempo a mais treinando modelos adicionais pode converter-se em ganhos.
